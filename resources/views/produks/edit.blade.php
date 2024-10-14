@@ -84,7 +84,7 @@
                                 <x-input-error :messages="$errors->get('deskripsi')" class="mt-2" />
                             </div>
                             <div class="p-5">
-                                <x-primary-button class="  py-3">
+                                <x-primary-button class=" justify-center w-full py-3">
                                     {{ __('Kirim') }}
                                 </x-primary-button>
 

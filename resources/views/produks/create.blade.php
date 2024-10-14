@@ -14,8 +14,8 @@
         @csrf
         <div class="flex">
 
-            <div class="w-1/2 aspect-h-1" >
-            <img :src="imageUrl" class="rounded-md" alt="">
+            <div class="relative w-1/2" style="padding-bottom: 36.25%;">
+                <img :src="imageUrl" class="absolute inset-0 w-full h-full object-cover rounded-md" alt="">
             </div>
 
             <div class="w-1/2">
@@ -62,13 +62,14 @@
                     <x-textarea id="deskripsi" class="block mt-1 w-full" type="text" name="deskripsi" >{{ old('deskripsi') }}</x-textarea>
                     <x-input-error :messages="$errors->get('deskripsi')" class="mt-2" />
                 </div>
-            </div>
-        </div>
 
         <div class="p-5">
-        <x-primary-button class=" justify-center w-full py-3">
-            {{ __('Kirim') }}
-        </x-primary-button>
+            <x-primary-button class=" justify-center w-full py-3">
+                {{ __('Kirim') }}
+            </x-primary-button>
+            </div>
+            </div>
+        </div>
 
 
     </form>
