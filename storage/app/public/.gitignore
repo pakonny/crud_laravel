@@ -1,2 +1,5 @@
 *
 !.gitignore
+!storage/
+!storage/img/
+!storage/img/**
