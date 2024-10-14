@@ -27,9 +27,8 @@
                 </header>
             @endisset
 
-            <div class="flex  justify-center mt-10">
-                <img src="{{ url('storage/img/logo.png') }}" class="h-14" alt="">
-                
+            <div class="flex  justify-center mt-10 text-4xl">
+                <h1 class="font-bold"><span class="font-thin">Toko</span>Pakgnel</h1>
             </div>
             <!-- Page Content -->
             <main>

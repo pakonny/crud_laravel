@@ -27,19 +27,19 @@ class ProdukTest extends TestCase
             'slug' => 'barang-elektronik'
         ]);
         Kategori::create([
-            'nama_kategori' => 'Minuman',
-            'slug' => 'minuman'
+            'nama_kategori' => 'Kebutuhan Harian',
+            'slug' => 'kebutuhan-harian'
         ]);
         Kategori::create([
-            'nama_kategori' => 'Mainan dan Kebutuhan',
-            'slug' => 'mainan-dan-kebutuhan'
+            'nama_kategori' => 'Mainan',
+            'slug' => 'mainan'
         ]);
     }
 
     #[Test]
-    public function produk_bisa_dibuat_dengan_kategori_yang_benar()
+    public function produk_bisa_dibuat()
     {
-        $kategori = Kategori::where('slug', 'makanan')->first(); // Mengambil kategori 'Makanan'
+        $kategori = Kategori::where('slug', 'makanan')->first();
 
         $produk = Produk::create([
             'nama' => 'Nasi Goreng',

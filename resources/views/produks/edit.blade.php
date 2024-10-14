@@ -35,9 +35,10 @@
                     @csrf
                     @method('PUT')
                     <div class="flex">
-                        <div class="w-1/2 aspect-h-1">
-                            <img :src="imageUrl" class="rounded-md" alt="">
+                        <div class="relative w-1/2" style="padding-bottom: 36.25%;">
+                            <img :src="imageUrl" class="absolute inset-0 w-full h-full object-cover rounded-md" alt="">
                         </div>
+
                         <div class="w-1/2">
                             <div class="p-5">
                                 <x-input-label for="nama" :value="__('Nama')" />
@@ -71,7 +72,8 @@
                                     <option value="1">Makanan</option>
                                     <option value="2">Barang Elektronik</option>
                                     <option value="3">Minuman</option>
-                                    <option value="4">Mainan dan Kebutuhan</option>
+                                    <option value="4">Kebutuhan Harian</option>
+                                    <option value="5">Mainan</option>
                                 </select>
                                 <x-input-error :messages="$errors->get('kategori')" class="mt-2" />
                             </div>

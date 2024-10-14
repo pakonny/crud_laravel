@@ -35,7 +35,7 @@ class ProdukController extends Controller
             'nama' => 'required',
             'harga' => 'required|numeric',
             'kategori_id' => 'required',
-            'deskripsi' => 'nullable|string',
+            'deskripsi' => 'nullable|string|max:255',
             'foto' => 'required|image|mimes:jpeg,png,jpg'
         ]);
         $validatedData['harga'] = str_replace(".", "", $validatedData['harga']);
@@ -58,7 +58,7 @@ class ProdukController extends Controller
             'nama' => 'required',
             'harga' => 'required|numeric',
             'kategori_id' => 'required',
-            'deskripsi' => 'nullable|string',
+            'deskripsi' => 'nullable|string|max:255',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg'
         ]);
         $validatedData['harga'] = str_replace(".", "", $validatedData['harga']);

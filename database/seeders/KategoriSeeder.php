@@ -26,8 +26,12 @@ class KategoriSeeder extends Seeder
             'slug' => 'minuman'
         ]);
         Kategori::create([
-            'nama_kategori' => 'Mainan dan Kebutuhan',
-            'slug' => 'mainan-dan-kebutuhan'
+            'nama_kategori' => 'Kebutuhan Harian',
+            'slug' => 'kebutuhan-harian'
+        ]);
+        Kategori::create([
+            'nama_kategori' => 'Mainan',
+            'slug' => 'mainan'
         ]);
     }
 }

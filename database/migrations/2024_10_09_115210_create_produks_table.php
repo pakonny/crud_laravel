@@ -19,7 +19,7 @@ return new class extends Migration
                 table: 'kategoris', indexName: 'produks_kategori_id'
             );
             $table->string('deskripsi')->nullable();//Nullable artinya boleh null
-            $table->string('foto')->default('noimage.png');
+            $table->string('foto')->default('img/noimage.png');
             $table->timestamps();
         });
     }
