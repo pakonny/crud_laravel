@@ -33,19 +33,19 @@
                     type="file"
                     name="foto"
                     :value="old('foto')"
-                    required
+                    
                     @change="imageUrl = URL.createObjectURL($event.target.files[0])"
                     />
                     <x-input-error :messages="$errors->get('foto')" class="mt-2" />
                 </div>
                 <div class="p-5">
                     <x-input-label for="harga" :value="__('Harga')" />
-                    <x-text-input id="harga" x-mask:dynamic="$money($input, ',')" class="block mt-1 w-full" type="text" name="harga" :value="old('harga')" required />
+                    <x-text-input id="harga" x-mask:dynamic="$money($input, ',')" class="block mt-1 w-full" type="text" name="harga" :value="old('harga')"  />
                     <x-input-error :messages="$errors->get('harga')" class="mt-2" />
                 </div>
                 <div class="p-5">
                     <x-input-label for="kategori" :value="__('Kategori')" />
-                    <select name="kategori_id" id="kategori" required class="block mt-1 w-full  border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                    <select name="kategori_id" id="kategori"  class="block mt-1 w-full  border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                         <option value="" disabled selected>- Pilih Kategori -</option>
                         @foreach ($kategoris as $kategori)
                         <option value="{{ $kategori->id }}" {{ old('kategori_id') == $kategori->id ? 'selected' : '' }}>{{ $kategori->nama_kategori }}</option>

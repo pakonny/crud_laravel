@@ -31,9 +31,12 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
+        $request->merge([
+            'harga' => str_replace('.', '', $request->input('harga')),
+        ]);
         $validatedData = $request->validate([
             'nama' => 'required',
-            'harga' => 'required|numeric',
+            'harga' => 'required|numeric|min:1|max:2147483647',
             'kategori_id' => 'required',
             'deskripsi' => 'nullable|string|max:255',
             'foto' => 'required|image|mimes:jpeg,png,jpg'
@@ -54,9 +57,12 @@ class ProdukController extends Controller
 
     public function update(Request $request, Produk $produk)
     {
+        $request->merge([
+            'harga' => str_replace('.', '', $request->input('harga')),
+        ]);
         $validatedData = $request->validate([
             'nama' => 'required',
-            'harga' => 'required|numeric',
+            'harga' => 'required|numeric|min:1|max:2147483647',
             'kategori_id' => 'required',
             'deskripsi' => 'nullable|string|max:255',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg'
@@ -65,7 +71,9 @@ class ProdukController extends Controller
 
 
         if ($request->file('foto')) {
-            Storage::disk('public')->delete($produk->foto);
+            if($produk->foto != 'img/noimage.png'){
+                Storage::disk('public')->delete($produk->foto);
+            }
             $foto = $request->file('foto');
             $validatedData['foto'] = $foto->storeAs('img', $foto->hashName(), 'public');
         }
@@ -76,7 +84,7 @@ class ProdukController extends Controller
 
     public function delete(Produk $produk)
     {
-        if ($produk->foto != 'noimage.png') {
+        if ($produk->foto != 'img/noimage.png') {
             Storage::disk('public')->delete($produk->foto);
         }
 

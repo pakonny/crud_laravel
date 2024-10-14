@@ -15,7 +15,7 @@ class ProdukSeeder extends Seeder
     public function run(): void
     {
         $this->call(KategoriSeeder::class);
-        Produk::factory(3)->recycle([
+        Produk::factory(30)->recycle([
            Kategori::all()
         ])->create();
     }
